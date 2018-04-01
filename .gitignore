@@ -101,6 +101,5 @@ ENV/
 .mypy_cache/
 
 # project-specific
-data/mycorpus.txt
 result/
 .DS_Store
