@@ -2,7 +2,6 @@
 
 import os
 import copy
-import pickle
 import codecs
 import numpy as np
 
@@ -155,7 +154,6 @@ class WPE(object):  # Word Pair Encoding. Most ideas were borrowed from https://
             for token in tokens:
                 token = self.flatten(token)
                 dc[token] = dc.get(token, 0) + 1
-        pickle.dump(dc, open(os.path.join(self.result, 'dc.dat'), 'wb'))
         keywords = sorted(dc, key=dc.get, reverse=True)
         if self.cut:
             keywords = keywords[:self.cut]
